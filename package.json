@@ -24,6 +24,19 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "keybindings": [
+      {
+        "command": "korean-grammar-checker.koreanGrammarChecker",
+        "key": "ctrl+shift+1",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "korean-grammar-checker.koreanGrammarChecker",
+        "key": "ctrl+shift+1",
+        "mac": "cmd+shift+1",
+        "when": "editorTextFocus"
+      }
+    ],
     "commands": [
       {
         "command": "korean-grammar-checker.koreanGrammarChecker",
