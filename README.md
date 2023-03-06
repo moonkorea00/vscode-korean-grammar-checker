@@ -64,4 +64,4 @@ Initial release
 
 <br>
 
-> Korean Grammer Checker는 [네이버 맞춤법 검사기](https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EB%A7%9E%EC%B6%A4%EB%B2%95+%EA%B2%80%EC%82%AC%EA%B8%B0&oquery=%EB%A7%9E%EC%B6%A4%EB%B2%95+%EA%B2%80%EC%82%AC%EA%B8%B0&tqi=isSlWwprvmZssbW1E2Nssssss0l-180665)의 api를 사용합니다. 모든 저작권은 보유자인 네이버(주)에게 있습니다. 
+> Korean Grammar Checker는 [네이버 맞춤법 검사기](https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EB%A7%9E%EC%B6%A4%EB%B2%95+%EA%B2%80%EC%82%AC%EA%B8%B0&oquery=%EB%A7%9E%EC%B6%A4%EB%B2%95+%EA%B2%80%EC%82%AC%EA%B8%B0&tqi=isSlWwprvmZssbW1E2Nssssss0l-180665)의 api를 사용합니다. 모든 저작권은 보유자인 네이버(주)에게 있습니다. 
