@@ -20,7 +20,7 @@
   "categories": [
     "Linters"
   ],
-  "icon": "korean-grammar-checker-logo.png",
+  "icon": "src/assets/korean-grammar-checker-logo.png",
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
