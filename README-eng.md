@@ -4,6 +4,11 @@
 
 > For Korean Click [Here](https://github.com/moonkorea00/vscode-korean-grammar-checker#readme)
 
+## TL;DR
+
+- Check Corrections : <b>`Cmd+shift+1`</b> (macOS), <b>`Ctrl+shift+1`</b> (Windows)
+- Apply Corrections : <b>`Cmd+shift+2`</b> (macOS), <b>`Ctrl+shift+2`</b> (Windows)
+
 <br>
 
 ## Installation
@@ -50,7 +55,7 @@
 
 <br>
 
-## Issues
+## Issues and Limitations
 
 - Korean Grammar Checker makes corrections up to 500 letters. Once the max word count exceeds, corrections are returned along with a VScode notification.
 

@@ -1,9 +1,13 @@
-# Change Log
+# Changelog
 
-All notable changes to the "korean-grammar-checker" extension will be documented in this file.
+Check the [Github repository](https://github.com/moonkorea00/vscode-korean-grammar-checker) for details.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [1.0.0] - 2023-03-05
 
-## [Unreleased]
+- initial release
 
-- Initial release
+## [1.1.0] - 2019-02-15
+
+### Added
+
+- New command to apply corrections to current document.

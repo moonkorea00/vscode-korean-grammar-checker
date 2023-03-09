@@ -4,6 +4,11 @@
 
 > For English Click [Here](https://github.com/moonkorea00/vscode-korean-grammar-checker/blob/main/README-eng.md)
 
+## TL;DR
+
+- 검사 : <b>`Cmd+shift+1`</b> (macOS), <b>`Ctrl+shift+1`</b> (Windows)
+- 수정 : <b>`Cmd+shift+2`</b> (macOS), <b>`Ctrl+shift+2`</b> (Windows)
+
 <br>
 
 ## 설치
@@ -50,13 +55,13 @@
 
 <br>
 
-## Issues
+## Issues 및 제한 사항
 
-- 본 확장 프로그램은 최대 500자까지의 교정 결과를 반환하고 초과 시 vscode 알림창을 출력합니다.
+- 본 확장 프로그램은 최대 500자까지 교정합니다. 글자 제한 초과 시 500자에 대한 교정 결과를 반환하고 vscode 알림창을 출력합니다.
 
 <br>
 
-## Release Notes
+## 버전
 
 ### 1.0.0
 
