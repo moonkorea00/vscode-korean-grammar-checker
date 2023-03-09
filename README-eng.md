@@ -6,8 +6,8 @@
 
 ## TL;DR
 
-- Check Corrections : <b>`Cmd+shift+1`</b> (macOS), <b>`Ctrl+shift+1`</b> (Windows)
-- Apply Corrections : <b>`Cmd+shift+2`</b> (macOS), <b>`Ctrl+shift+2`</b> (Windows)
+- Check Corrections : `Cmd+shift+1` , (macOS), `Ctrl+shift+1` (Windows)
+- Apply Corrections : `Cmd+shift+2` , (macOS), `Ctrl+shift+2` (Windows)
 
 <br>
 
@@ -20,18 +20,24 @@
 
 ## Demo and Usage
 
-- <b>`View-Command Palette`</b>(Cmd+Shift+P / Ctrl+Shift+P) &nbsp; &#8594; &nbsp; select <b>`Korean Grammar Checker: Inspect current file or selected text`</b>
-- Keyboard Shortcuts(default) : <b>`Cmd+shift+1`</b> (macOS), <b>`Ctrl+shift+1`</b> (Windows)
-
-<br>
-
-- [ ] <b>Inspect Entire Text</b>
+> Inspect Entire Document
 
 ![전체 검사](https://user-images.githubusercontent.com/78708082/223107737-845b9905-cd55-4ecb-b223-ca39176e3e69.gif)
 
-- [ ] <b>Inspect Selected text</b>
+> Inspect Selected text
 
 ![선택 검사](https://user-images.githubusercontent.com/78708082/223107750-72ac458c-2cc8-4dd4-b705-0d62ec612622.gif)
+
+> Apply Corrections
+
+![수정](https://user-images.githubusercontent.com/78708082/223957309-72f721ee-4518-4570-aabe-5799b22d9d98.gif)
+
+<br>
+
+|    Command   |       Keyboard Shortcut(default)       | Command Palette |
+| :---: | :------------: | ---------------------- |
+|    Inspect Corrections    | `Cmd+shift+1` / `Ctrl+shift+1` | `View` &nbsp; &#8594;`Command Palette`&nbsp; &#8594; 	&nbsp; `Korean Grammar Checker: Inspect current document` |
+|    Apply Corrections    | `Cmd+shift+2` / `Ctrl+shift+2` | `View` &nbsp; &#8594;`Command Palette` &nbsp; &#8594; 	&nbsp; `Korean Grammar Checker: Apply Corrections` |
 
 <br>
 
@@ -66,6 +72,10 @@
 ### 1.0.0
 
 Initial release
+
+### 1.1.0
+
+- New command to apply corrections to current document.
 
 <br>
 

@@ -4,34 +4,48 @@
 
 > For English Click [Here](https://github.com/moonkorea00/vscode-korean-grammar-checker/blob/main/README-eng.md)
 
+<br>
+
 ## TL;DR
 
-- 검사 : <b>`Cmd+shift+1`</b> (macOS), <b>`Ctrl+shift+1`</b> (Windows)
-- 수정 : <b>`Cmd+shift+2`</b> (macOS), <b>`Ctrl+shift+2`</b> (Windows)
-
+  - 검사 : `Cmd+shift+1` (macOS) , `Ctrl+shift+1` (Windows)
+  - 수정 : `Cmd+shift+2` (macOS) , `Ctrl+shift+2` (Windows)
+  
 <br>
 
 ## 설치
 
 - [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=moonkorea.vscode-korean-grammar-checker)
-- `vscode-보기-확장`(Cmd+Shift+X / Ctrl+Shift+X)에서 `Korean Grammar Checker` 검색 후 설치
+- `vscode-보기-확장`(Cmd+shift+X / Ctrl+shift+X)에서 `Korean Grammar Checker` 검색 후 설치
 
 <br>
 
 ## Demo 및 사용법
 
-- <b>`보기-명령 팔레트`</b>(Cmd+Shift+P / Ctrl+Shift+P) 실행 후 <b>`Korean Grammar Checker: Inspect current file or selected text`</b> 선택
-- 단축키(default) : <b>`Cmd+shift+1`</b> (macOS), <b>`Ctrl+shift+1`</b> (Windows)
-
-<br>
-
-- [ ] <b>전체 검사</b>
+> 전체 검사
 
 ![전체 검사](https://user-images.githubusercontent.com/78708082/223107737-845b9905-cd55-4ecb-b223-ca39176e3e69.gif)
 
-- [ ] <b>선택 검사</b>
+<br>
+
+> 선택 검사
 
 ![선택 검사](https://user-images.githubusercontent.com/78708082/223107750-72ac458c-2cc8-4dd4-b705-0d62ec612622.gif)
+
+<br>
+
+> 수정
+
+![수정](https://user-images.githubusercontent.com/78708082/223957309-72f721ee-4518-4570-aabe-5799b22d9d98.gif)
+
+<br>
+
+- [ ] 사용법
+
+|    명령   |       단축키       | 명령 팔레트 |
+| :---: | :------------: | ---------------------- |
+|    검사    | `Cmd+shift+1` / `Ctrl+shift+1` | `보기` &nbsp; &#8594; &nbsp; `명령 팔레트` &nbsp; &#8594; &nbsp; `Korean Grammar Checker: Inspect current document` |
+|    수정    | `Cmd+shift+2` / `Ctrl+shift+2` | `보기` &nbsp; &#8594; &nbsp; `명령 팔레트` &nbsp; &#8594; &nbsp; `Korean Grammar Checker: Apply Corrections` |
 
 <br>
 
@@ -66,6 +80,10 @@
 ### 1.0.0
 
 Initial release
+
+### 1.1.0
+
+검사 결과 수정 명령 추가
 
 <br>
 
