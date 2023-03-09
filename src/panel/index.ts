@@ -8,7 +8,7 @@ type CorrectionData = {
   };
 };
 
-export function createAndUpdatePanel(data: CorrectionData) {
+export function createPanel(data: CorrectionData) {
   const panel = vscode.window.createWebviewPanel(
     'correctionPanel',
     'Correction Panel',
@@ -16,10 +16,12 @@ export function createAndUpdatePanel(data: CorrectionData) {
     {}
   );
 
-  panel.webview.html = createPanelHTML(data.message.result.html);
+  panel.webview.html = createHtml(data.message.result.html);
+
+  vscode.commands.executeCommand('workbench.action.focusPreviousGroup');
 }
 
-export function createPanelHTML(html: string) {
+export function createHtml(html: string) {
   return `
       <!DOCTYPE html>
       <html lang="kor">

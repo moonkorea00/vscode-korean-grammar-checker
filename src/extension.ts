@@ -1,8 +1,10 @@
 import * as vscode from 'vscode';
-import { checkGrammar } from './command';
+import { commands } from './command';
 
 export function activate(context: vscode.ExtensionContext) {
-  context.subscriptions.push(checkGrammar);
+  const { check, apply } = commands(context);
+
+  context.subscriptions.push(check, apply);
 }
 
 export function deactivate() {}

@@ -26,21 +26,37 @@
   "contributes": {
     "keybindings": [
       {
-        "command": "korean-grammar-checker.koreanGrammarChecker",
+        "command": "korean-grammar-checker.checkGrammar",
         "key": "ctrl+shift+1",
         "when": "editorTextFocus"
       },
       {
-        "command": "korean-grammar-checker.koreanGrammarChecker",
+        "command": "korean-grammar-checker.checkGrammar",
         "key": "ctrl+shift+1",
         "mac": "cmd+shift+1",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "korean-grammar-checker.applyCorrection",
+        "key": "ctrl+shift+2",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "korean-grammar-checker.applyCorrection",
+        "key": "ctrl+shift+2",
+        "mac": "cmd+shift+2",
         "when": "editorTextFocus"
       }
     ],
     "commands": [
       {
-        "command": "korean-grammar-checker.koreanGrammarChecker",
+        "command": "korean-grammar-checker.checkGrammar",
         "title": "Inspect current file or selected text",
+        "category": "Korean Grammar Checker"
+      },
+      {
+        "command": "korean-grammar-checker.applyCorrection",
+        "title": "Apply Corrections",
         "category": "Korean Grammar Checker"
       }
     ]
