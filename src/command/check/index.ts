@@ -35,12 +35,13 @@ export async function checkGrammar(context: vscode.ExtensionContext) {
       updateCorrectionState(
         context,
         null,
+        null,
         selectedEditorText.slice(0, 500),
         data.message.result.notag_html,
         position
       );
     } else {
-      updateCorrectionState(context, data.message.result.notag_html);
+      updateCorrectionState(context, textChunk, data.message.result.notag_html);
     }
 
     if (Number(WORD_COUNT) > MAX_WORD_COUNT) {

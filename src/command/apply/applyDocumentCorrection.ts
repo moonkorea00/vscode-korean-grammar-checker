@@ -6,6 +6,10 @@ export function applyDocumentCorrection(
   editor: vscode.TextEditor,
   state: CorrectionState
 ) {
+  const isInitialAndCorrectedNotMatch =
+    editor.document.getText().slice(0, 500) !== state.initialText;
+  if (isInitialAndCorrectedNotMatch) return;
+
   editor.edit(text => {
     const html = state.correctedContent!;
     const parsedHtml = decodeHtmlEntity(html, editor);
