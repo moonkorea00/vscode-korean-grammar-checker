@@ -35,14 +35,26 @@ export function decodeHtmlEntity(input: string, editor: vscode.TextEditor) {
 }
 
 export function getChunkIndicies(editor: vscode.TextEditor) {
-  const chunk = editor.selection;
-  const startIndex = chunk.start;
-  const endIndex = chunk.end;
+  const chunk: vscode.Selection = editor.selection;
+  const startIndex: vscode.Position = chunk.start;
+  const endIndex: vscode.Position = chunk.end;
+  const chunkInDocument: string = editor.document.getText(chunk);
 
-  return {
-    startIndex,
-    endIndex,
-  };
+  if (chunkInDocument.length > 500) {
+    const slicedChunk = chunkInDocument.slice(0, 500);
+    const slicedEndIndex = editor.document.positionAt(
+      editor.document.offsetAt(startIndex) + slicedChunk.length
+    );
+    return {
+      startIndex,
+      endIndex: slicedEndIndex,
+    };
+  } else {
+    return {
+      startIndex,
+      endIndex,
+    };
+  }
 }
 
 export function getCorrectionState(context: vscode.ExtensionContext) {
@@ -54,12 +66,14 @@ export function getCorrectionState(context: vscode.ExtensionContext) {
 
 export function updateCorrectionState(
   context: vscode.ExtensionContext,
+  initialText: string | null = null,
   correctedContent: string | null,
   initialChunk: string | null = null,
   correctedChunk: string | null = null,
-  chunkPosition: ChunkPosition | null = null
+  chunkPosition: ChunkPosition | null = null,
 ) {
   context.workspaceState.update('correction_state', {
+    initialText,
     correctedContent,
     initialChunk,
     correctedChunk,
@@ -69,6 +83,7 @@ export function updateCorrectionState(
 
 export function resetCorrectionState(context: vscode.ExtensionContext) {
   context.workspaceState.update('correction_state', {
+    initialText: null,
     correctedContent: null,
     initialChunk: null,
     correctedChunk: null,
@@ -81,8 +96,7 @@ export function showVscodeMessage(errType: string, data?: VscodeMessageProps) {
     maxCount: `Max word count(500) exceeded - ${data?.WORD_COUNT}/${data?.MAX_WORD_COUNT}`,
     axiosError: `Error : ${data?.errorMessage}`,
     unexpected: `An unexpected error occurred. Please try again later.`,
-    chunkNotFound:
-      'Could not find text to correct. Make a new Inspection request.',
+    chunkNotFound: 'Make a new Inspection request. Initial text not found.',
   };
 
   return vscode.window.showWarningMessage(

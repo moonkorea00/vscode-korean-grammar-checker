@@ -6,6 +6,7 @@ export type ChunkPosition = {
 };
 
 export type CorrectionState = {
+  initialText: string | null;
   correctedContent: string | null;
   initialChunk: string | null;
   correctedChunk: string | null;
