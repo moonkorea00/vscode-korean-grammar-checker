@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import { resetCorrectionState } from '../command/command.utils';
 
 type CorrectionData = {
   message: {
@@ -8,7 +9,10 @@ type CorrectionData = {
   };
 };
 
-export function createPanel(data: CorrectionData) {
+export function renderPanel(
+  data: CorrectionData,
+  context: vscode.ExtensionContext
+) {
   const panel = vscode.window.createWebviewPanel(
     'correctionPanel',
     'Correction Panel',
@@ -19,6 +23,11 @@ export function createPanel(data: CorrectionData) {
   panel.webview.html = createHtml(data.message.result.html);
 
   vscode.commands.executeCommand('workbench.action.focusPreviousGroup');
+
+  // clean up state
+  panel.onDidDispose(() => {
+    resetCorrectionState(context);
+  });
 }
 
 export function createHtml(html: string) {
