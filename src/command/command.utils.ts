@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import { ChunkPosition, CorrectionState } from '../types';
 
 type VscodeMessageProps = {
-  [key: string]: number | string | ((status: number) => string);
+  [key: string]: string | ((status: number) => string);
 };
 
 export function decodeHtmlEntity(input: string, editor: vscode.TextEditor) {
@@ -36,25 +36,13 @@ export function decodeHtmlEntity(input: string, editor: vscode.TextEditor) {
 
 export function getChunkIndicies(editor: vscode.TextEditor) {
   const chunk: vscode.Selection = editor.selection;
-  const startIndex: vscode.Position = chunk.start;
-  const endIndex: vscode.Position = chunk.end;
-  const chunkInDocument: string = editor.document.getText(chunk);
+  const startPosition: vscode.Position = chunk.start;
+  const endPosition: vscode.Position = chunk.end;
 
-  if (chunkInDocument.length > 500) {
-    const slicedChunk = chunkInDocument.slice(0, 500);
-    const slicedEndIndex = editor.document.positionAt(
-      editor.document.offsetAt(startIndex) + slicedChunk.length
-    );
-    return {
-      startIndex,
-      endIndex: slicedEndIndex,
-    };
-  } else {
-    return {
-      startIndex,
-      endIndex,
-    };
-  }
+  return {
+    startPosition,
+    endPosition,
+  };
 }
 
 export function getCorrectionState(context: vscode.ExtensionContext) {
@@ -70,7 +58,7 @@ export function updateCorrectionState(
   correctedContent: string | null,
   initialChunk: string | null = null,
   correctedChunk: string | null = null,
-  chunkPosition: ChunkPosition | null = null,
+  chunkPosition: ChunkPosition | null = null
 ) {
   context.workspaceState.update('correction_state', {
     initialText,
@@ -93,7 +81,6 @@ export function resetCorrectionState(context: vscode.ExtensionContext) {
 
 export function showVscodeMessage(errType: string, data?: VscodeMessageProps) {
   const messageMap = {
-    maxCount: `Max word count(500) exceeded - ${data?.WORD_COUNT}/${data?.MAX_WORD_COUNT}`,
     axiosError: `Error : ${data?.errorMessage}`,
     unexpected: `An unexpected error occurred. Please try again later.`,
     chunkNotFound: 'Make a new Inspection request. Initial text not found.',
