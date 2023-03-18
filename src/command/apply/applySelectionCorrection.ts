@@ -9,16 +9,16 @@ export function applySelectionCorrection(
   if (state.correctedChunk === null) return;
 
   editor.edit(text => {
-    const { startIndex, endIndex } = state.chunkPosition!;
-    const isInitialAndCorrectedMatch =
-      editor.document.getText(new vscode.Range(startIndex, endIndex)) ===
+    const { startPosition, endPosition } = state.chunkPosition!;
+    const isInitialAndCorrectedChunkMatch =
+      editor.document.getText(new vscode.Range(startPosition, endPosition)) ===
       state.initialChunk;
 
-    if (isInitialAndCorrectedMatch) {
+    if (isInitialAndCorrectedChunkMatch) {
       const html = state.correctedChunk!;
       const parsedHtml = decodeHtmlEntity(html, editor);
 
-      text.replace(new vscode.Range(startIndex, endIndex), parsedHtml);
+      text.replace(new vscode.Range(startPosition, endPosition), parsedHtml);
     } else {
       throw new Error('initial text not found');
     }

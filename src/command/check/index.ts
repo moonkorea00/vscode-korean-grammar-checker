@@ -16,15 +16,12 @@ export async function checkGrammar(context: vscode.ExtensionContext) {
 
   const fullEditorText = editor.document.getText();
   const selectedEditorText = editor.document.getText(editor.selection);
-  const textChunk = (selectedEditorText || fullEditorText).slice(0, 500);
-
-  const WORD_COUNT = (selectedEditorText || fullEditorText).length;
-  const MAX_WORD_COUNT = 500;
+  const text = selectedEditorText||fullEditorText;
 
   try {
     if (!selectedEditorText && !fullEditorText) return;
 
-    const data = await fetchCorrections(textChunk);
+    const data = await fetchCorrections(editor, text);
 
     // render panel
     renderPanel(data, context);
@@ -36,16 +33,12 @@ export async function checkGrammar(context: vscode.ExtensionContext) {
         context,
         null,
         null,
-        selectedEditorText.slice(0, 500),
-        data.message.result.notag_html,
+        selectedEditorText,
+        data.notag,
         position
       );
     } else {
-      updateCorrectionState(context, textChunk, data.message.result.notag_html);
-    }
-
-    if (Number(WORD_COUNT) > MAX_WORD_COUNT) {
-      showVscodeMessage('maxCount', { WORD_COUNT, MAX_WORD_COUNT });
+      updateCorrectionState(context, text, data.notag);
     }
   } catch (err) {
     const errorMap = {

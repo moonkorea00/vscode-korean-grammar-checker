@@ -1,8 +1,8 @@
 import * as vscode from 'vscode';
 
 export type ChunkPosition = {
-  startIndex: vscode.Position;
-  endIndex: vscode.Position;
+  startPosition: vscode.Position;
+  endPosition: vscode.Position;
 };
 
 export type CorrectionState = {

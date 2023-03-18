@@ -2,11 +2,7 @@ import * as vscode from 'vscode';
 import { resetCorrectionState } from '../command/command.utils';
 
 type CorrectionData = {
-  message: {
-    result: {
-      html: string;
-    };
-  };
+  html: string;
 };
 
 export function renderPanel(
@@ -20,7 +16,7 @@ export function renderPanel(
     {}
   );
 
-  panel.webview.html = createHtml(data.message.result.html);
+  panel.webview.html = createHtml(data.html);
 
   vscode.commands.executeCommand('workbench.action.focusPreviousGroup');
 
