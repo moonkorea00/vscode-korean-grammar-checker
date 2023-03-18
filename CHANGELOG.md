@@ -17,3 +17,9 @@ Check the [Github repository](https://github.com/moonkorea00/vscode-korean-gramm
 ### Fixed
 
 - Issue replacing entire selected text with correction response regardless of max word count(500)([#5](https://github.com/moonkorea00/vscode-korean-grammar-checker/issues/5))
+
+## [1.2.0] - 2023-03-18
+
+### Added
+
+- resolved character limit

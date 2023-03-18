@@ -63,8 +63,7 @@
 
 ## Issues and Limitations
 
-- Korean Grammar Checker makes corrections up to 500 letters. Once the max word count exceeds, a VS Code notification is returned along with the corrections.
-- It is expected behavior for the extension to take longer processing time depending on the number of grammar errors your request has. For example, 40 grammar errors can require up to more than 2 seconds while several errors within your text will return an instant response.
+- ~~Korean Grammar Checker makes corrections up to 500 letters. Once the max word count exceeds, a VS Code notification is returned along with the corrections.~~
 
 <br>
 
@@ -81,6 +80,10 @@ Added: New command to apply corrections to current document
 ### 1.1.1
 
 Fixed : Entire selected text is replaced with correction response regardless of max word count(500)([#5](https://github.com/moonkorea00/vscode-korean-grammar-checker/issues/5))
+
+### 1.2.0
+
+Added : resolved character limit
 
 <br>
 
