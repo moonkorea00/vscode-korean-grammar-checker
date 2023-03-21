@@ -63,8 +63,6 @@
 
 ## Issues and Limitations
 
-- ~~Korean Grammar Checker makes corrections up to 500 letters. Once the max word count exceeds, a VS Code notification is returned along with the corrections.~~
-
 <br>
 
 ## Release Notes
