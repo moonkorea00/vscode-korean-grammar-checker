@@ -91,6 +91,10 @@ Fixed : 500자 이상 선택 검사 후 수정 시 최초 선택한 텍스트 �
 
 Added : 기존 글자 제한 해결
 
+### 1.2.2
+
+Fixed : 맞춤법 검사 API 유효하지 않은 키 에러 대응
+
 <br>
 
 > Korean Grammar Checker는 [네이버 맞춤법 검사기](https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EB%A7%9E%EC%B6%A4%EB%B2%95+%EA%B2%80%EC%82%AC%EA%B8%B0&oquery=%EB%A7%9E%EC%B6%A4%EB%B2%95+%EA%B2%80%EC%82%AC%EA%B8%B0&tqi=isSlWwprvmZssbW1E2Nssssss0l-180665)의 api를 사용합니다. 모든 저작권은 보유자인 네이버(주)에게 있습니다. 

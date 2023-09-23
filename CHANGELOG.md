@@ -2,6 +2,12 @@
 
 Check the [Github repository](https://github.com/moonkorea00/vscode-korean-grammar-checker) for details.
 
+## [1.2.2] = 2023-09-24
+
+### Fixed
+
+- fix API authentication issue
+
 ## [1.2.0] - 2023-03-18
 
 ### Added
