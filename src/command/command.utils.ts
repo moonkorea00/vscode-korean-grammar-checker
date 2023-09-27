@@ -1,9 +1,4 @@
 import * as vscode from 'vscode';
-import { ChunkPosition, CorrectionState } from '../types';
-
-type VscodeMessageProps = {
-  [key: string]: string | ((status: number) => string);
-};
 
 export function decodeHtmlEntity(input: string, editor: vscode.TextEditor) {
   const regex = /&([a-z]+);|<br>/g;
@@ -45,48 +40,33 @@ export function getChunkIndicies(editor: vscode.TextEditor) {
   };
 }
 
-export function getCorrectionState(context: vscode.ExtensionContext) {
-  const state: CorrectionState =
-    context.workspaceState.get('correction_state')!;
+export const workspace = {
+  get: <T>(context: vscode.ExtensionContext, key: string): T | undefined =>
+    context.workspaceState.get(key),
+  set: <T>(context: vscode.ExtensionContext, key: string, value: T) => {
+    context.workspaceState.update(key, value);
+  },
+};
 
-  return state;
-}
+export const initialCorrectionState = {
+  editorText: null,
+  correction: null,
+  chunkPosition: null,
+};
 
-export function updateCorrectionState(
-  context: vscode.ExtensionContext,
-  initialText: string | null = null,
-  correctedContent: string | null,
-  initialChunk: string | null = null,
-  correctedChunk: string | null = null,
-  chunkPosition: ChunkPosition | null = null
+type ErrorType = 'axiosError' | 'unexpected' | 'chunkNotFound';
+
+export function showVscodeMessage(
+  errorType: ErrorType,
+  errorMessage?: string | ((status: number) => string)
 ) {
-  context.workspaceState.update('correction_state', {
-    initialText,
-    correctedContent,
-    initialChunk,
-    correctedChunk,
-    chunkPosition,
-  });
-}
-
-export function resetCorrectionState(context: vscode.ExtensionContext) {
-  context.workspaceState.update('correction_state', {
-    initialText: null,
-    correctedContent: null,
-    initialChunk: null,
-    correctedChunk: null,
-    chunkPosition: null,
-  });
-}
-
-export function showVscodeMessage(errType: string, data?: VscodeMessageProps) {
   const messageMap = {
-    axiosError: `Error : ${data?.errorMessage}`,
-    unexpected: `An unexpected error occurred. Please try again later.`,
+    axiosError: `Error : ${errorMessage}`,
+    unexpected: `An unexpected error occurred. Please try again later. Error : ${errorMessage}`,
     chunkNotFound: 'Make a new Inspection request. Initial text not found.',
   };
 
   return vscode.window.showWarningMessage(
-    messageMap[errType as keyof typeof messageMap]
+    messageMap[errorType as keyof typeof messageMap]
   );
 }

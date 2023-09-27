@@ -6,9 +6,11 @@ export type ChunkPosition = {
 };
 
 export type CorrectionState = {
-  initialText: string | null;
-  correctedContent: string | null;
-  initialChunk: string | null;
-  correctedChunk: string | null;
-  chunkPosition: ChunkPosition | null;
+  editorText: string | null;
+  correction: string | null;
+  chunkPosition?: ChunkPosition | null;
 };
+
+export type CorrectionStateWithContext = {
+  context: vscode.ExtensionContext;
+} & CorrectionState;

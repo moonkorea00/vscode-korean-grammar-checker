@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 
-export function splitChunks(editor: vscode.TextEditor, text: string) {
+export function splitTextToChunks(editor: vscode.TextEditor, text: string) {
   const MAX_WORD_COUNT = 500;
 
   if (text.length < MAX_WORD_COUNT) return [text];

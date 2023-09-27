@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { commands } from './command';
-import { resetCorrectionState } from './command/command.utils';
+import { workspace, initialCorrectionState } from './command/command.utils';
 
 export function activate(context: vscode.ExtensionContext) {
   const { check, apply } = commands(context);
@@ -9,5 +9,5 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate(context: vscode.ExtensionContext) {
-  resetCorrectionState(context);
+  workspace.set(context, 'correction', initialCorrectionState);
 }

@@ -1,5 +1,7 @@
 import * as vscode from 'vscode';
 
-export const register = (command: string, cb: (...args: any[]) => any) => {
+type CommandReturnType = Promise<string | undefined> | void;
+
+export const register = (command: string, cb: () => CommandReturnType) => {
   return vscode.commands.registerCommand(command, cb);
 };
