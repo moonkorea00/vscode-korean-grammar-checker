@@ -2,7 +2,7 @@
 
 `Korean Grammar Checker`는 단어 또는 문장을 글자 제한 없이 한글 맞춤법에 맞도록 교정하는 확장 프로그램입니다.
 
-> For English Click [Here](https://github.com/moonkorea00/vscode-korean-grammar-checker/blob/main/README-eng.md)
+> For English click [here](https://github.com/moonkorea00/vscode-korean-grammar-checker/blob/main/README-eng.md)
 
 <br>
 
@@ -94,6 +94,10 @@ Added : 기존 글자 제한 해결
 ### 1.2.2
 
 Fixed : 맞춤법 검사 API 유효하지 않은 키 에러 대응
+
+### 1.2.3
+
+Fixed : API 키 에러 발생 시 키 갱신
 
 <br>
 

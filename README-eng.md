@@ -2,7 +2,7 @@
 
 `Korean Grammar Checker` is a VScode extension that corrects words or sentences based on standard Korean grammar.
 
-> For Korean Click [Here](https://github.com/moonkorea00/vscode-korean-grammar-checker#readme)
+> For Korean click [here](https://github.com/moonkorea00/vscode-korean-grammar-checker#readme)
 
 ## TL;DR
 
@@ -82,6 +82,14 @@ Fixed : Entire selected text is replaced with correction response regardless of 
 ### 1.2.0
 
 Added : resolved character limit
+
+### 1.2.2
+
+Fixed : resolved api authentication error
+
+### 1.2.3
+
+Fixed : renew key on authentication error
 
 <br>
 

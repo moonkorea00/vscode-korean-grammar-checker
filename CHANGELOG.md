@@ -2,6 +2,12 @@
 
 Check the [Github repository](https://github.com/moonkorea00/vscode-korean-grammar-checker) for details.
 
+## [1.2.3] = 2023-09-27
+
+### Fixed
+
+- renew key on authentication error
+
 ## [1.2.2] = 2023-09-24
 
 ### Fixed
