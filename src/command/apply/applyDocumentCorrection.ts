@@ -1,5 +1,5 @@
+import type { CorrectionState } from '../../types';
 import * as vscode from 'vscode';
-import { CorrectionState } from '../../types';
 import { decodeHtmlEntity } from '../command.utils';
 
 export function applyDocumentCorrection(
@@ -8,7 +8,7 @@ export function applyDocumentCorrection(
 ) {
 
   editor.edit(text => {
-    const html = state.correctedContent!;
+    const html = state.correction as string;
     const parsedHtml = decodeHtmlEntity(html, editor);
 
     text.replace(

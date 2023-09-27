@@ -1,21 +1,21 @@
+import type { CorrectionState } from '../../types';
 import * as vscode from 'vscode';
-import { CorrectionState } from '../../types';
 import { decodeHtmlEntity } from '../command.utils';
 
 export function applySelectionCorrection(
   editor: vscode.TextEditor,
   state: CorrectionState
 ) {
-  if (state.correctedChunk === null) return;
+  if (state.correction === null) return;
 
   editor.edit(text => {
     const { startPosition, endPosition } = state.chunkPosition!;
-    const isInitialAndCorrectedChunkMatch =
+    const isSelectedTextAndRequestTextMatch =
       editor.document.getText(new vscode.Range(startPosition, endPosition)) ===
-      state.initialChunk;
+      state.editorText;
 
-    if (isInitialAndCorrectedChunkMatch) {
-      const html = state.correctedChunk!;
+    if (isSelectedTextAndRequestTextMatch) {
+      const html = state.correction as string;
       const parsedHtml = decodeHtmlEntity(html, editor);
 
       text.replace(new vscode.Range(startPosition, endPosition), parsedHtml);
