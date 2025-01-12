@@ -2,7 +2,7 @@
 
 Check the [Github repository](https://github.com/moonkorea00/vscode-korean-grammar-checker) for details.
 
-## [1.2.4] = 2024-01-13
+## [1.2.5] = 2024-01-13
 
 ### Fixed
 
