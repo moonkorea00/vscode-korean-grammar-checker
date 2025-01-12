@@ -91,6 +91,10 @@ Fixed : resolved api authentication error
 
 Fixed : renew key on authentication error
 
+### 1.2.5
+
+Fixed : rename css class to match API response
+
 <br>
 
 > Korean Grammar Checker uses [Naver's Grammar Checker](https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EB%A7%9E%EC%B6%A4%EB%B2%95+%EA%B2%80%EC%82%AC%EA%B8%B0&oquery=%EB%A7%9E%EC%B6%A4%EB%B2%95+%EA%B2%80%EC%82%AC%EA%B8%B0&tqi=isSlWwprvmZssbW1E2Nssssss0l-180665). The copyright holder, Naver, reserves all the rights.

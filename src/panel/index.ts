@@ -36,7 +36,7 @@ export function createHtml(html: string) {
             em.blue_text{
               color: #2FACEA
             }
-            em.purple_text{
+            em.violet_text{
               color: #B22AF8
             }
           </style>
